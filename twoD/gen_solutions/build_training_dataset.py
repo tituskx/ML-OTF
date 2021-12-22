@@ -25,7 +25,8 @@ p_otf = 2
 
 num_training_points = 10000
 num_test_points = 400
-num_sensors = 20
+num_sensors = 20 # this is num_sensors per axis. So in the 2D case num_sensors ** 2 would
+# be the total num_sensors
 
 tic = time.perf_counter()
 
