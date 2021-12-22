@@ -11,6 +11,9 @@ Additional links:
 1. Define the weak formulation and the inner product in `twoD/gen_solutions/weak_forms.py` that are used to build the optimal test functions.
 2. Run `twoD/gen_solutions/gen_matrices.py` to build the matrices corresponding to the inner product that you defined in `twoD/gen_solutions/weak_forms.py` and corresponding to a particular set of discretisations. The range of discretisations can be set by changing `n_min` and `n_max`. Define where you want the matrices to be saved before running.
 3. Run `twoD/gen_solutions/build_training_dataset.py` to build the training dataset. Define where you want the results to be stored before running by setting `matrix_files_locations`, `training_dataset_location`, `testing_dataset_location`. The function `gen_data_points` can be changed into `gen_data_points_var` to generate data for a variable Péclet number. 
- 
-3. Train a DeepONet
-4. Implement the network
+
+### Train a DeepONet
+Once a training dataset has been generated this comes down to running `twoD/train_deeponet.py`. The batch size per replica can be set in this script, as the number of epochs. Make sure to specify the storage location, model name, training dataset and testing dataset before runnning.
+
+### Implement the DeepONet
+
