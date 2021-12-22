@@ -13,7 +13,7 @@ Additional links:
 3. Run `twoD/gen_solutions/build_training_dataset.py` to build the training dataset. Define where you want the results to be stored before running by setting `matrix_files_locations`, `training_dataset_location`, `testing_dataset_location`. The function `gen_data_points` can be changed into `gen_data_points_var` to generate data for a variable Péclet number. 
 
 ### Train a DeepONet
-Once a training dataset has been generated this comes down to running `twoD/train_deeponet.py`. The batch size per replica can be set in this script, as the number of epochs. Make sure to specify the storage location, model name, training dataset and testing dataset before runnning.
+Once a training dataset has been generated this comes down to running `twoD/train_deeponet.py`. The batch size per replica can be set in this script, as the number of epochs. Make sure to specify the storage location, model name, training dataset and testing dataset before runnning. Also make sure that the `num_vars` `is set correctly depending on whether variables other than the spatial ones are used, so that the TFRecords can be read correctly.
 
 ### Implement the DeepONet
-
+Once the DeepONet is trained it can be implemented into the `twoD/fem_deeponet.py` code by specifying `model_path` which is the path where the model was stored. The results can be compared to the Galerkin implementation by running `fem_galerkin.py`.
